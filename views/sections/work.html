@@ -1,0 +1,32 @@
+{{ define "work" }}
+<section class="work">
+    <div class="container">
+        <h3 class="title work-grid-title">WORKS</h3>
+    </div>
+    <div class="grid work-grid-area">
+        <% works.forEach(function(work){ %>
+            <div class="grid-item container wow fadeIn" data-wow-iteration="1" data-wow-duration="0.5">
+                <img src="/images/rectangle.png" width="100%" />
+                <h4>
+                    <%= work.title %>
+                </h4>
+                <%- require('ejs-webpack-loader!../components/skill.ejs')( { skills: work.skills } ) %>
+            </div>
+            <% }) %>
+    </div>
+    <div class="container flex justify-end">
+        <button class="btn btn-loadmore">
+            <span>MORE</span>
+            <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M1.75 12.5C1.75 12.0858 2.08579 11.75 2.5 11.75L20.5007 11.75C20.9149 11.75 21.2507 12.0858 21.2507 12.5C21.2507 12.9142 20.9149 13.25 20.5007 13.25L2.5 13.25C2.08579 13.25 1.75 12.9142 1.75 12.5Z"
+                    fill="#14142B" />
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M16.0201 5.92386C16.3383 5.65868 16.8112 5.70167 17.0764 6.01987L21.8099 11.6998C22.1962 12.1633 22.1962 12.8367 21.8099 13.3003L17.0764 18.9802C16.8112 19.2984 16.3383 19.3414 16.0201 19.0762C15.7019 18.811 15.6589 18.3381 15.9241 18.0199L20.5242 12.5L15.9241 6.98017C15.6589 6.66197 15.7019 6.18904 16.0201 5.92386Z"
+                    fill="#14142B" />
+            </svg>
+
+        </button>
+    </div>
+</section>
+{{ end }}
