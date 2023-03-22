@@ -1,9 +1,10 @@
+new WOW().init();
 const swiperEl = document.querySelector('.mySwiper')
 const params = {
     autoplay: {
         delay: 2500,
     },
-    loop: true,
+    loop: false,
     slidesPerView: 1,
     spaceBetween: 0,
     enteredSlides: true,
@@ -38,9 +39,8 @@ const params = {
     },
     breakpoints: {
         768: {
-            slidesPerView: 3,
+            slidesPerView: 1.5,
             spaceBetween: 16,
-            loop: true,
         },
 
     },

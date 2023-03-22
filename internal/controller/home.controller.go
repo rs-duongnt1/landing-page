@@ -3,6 +3,7 @@ package controller
 import (
 	"net/http"
 
+	"fast-api.io/mocks"
 	"github.com/gin-gonic/gin"
 )
 
@@ -17,6 +18,8 @@ func InitHomeController(r *gin.RouterGroup) {
 
 func (h HomeController) Home(ctx *gin.Context) {
 	ctx.HTML(http.StatusOK, "index.html", gin.H{
-		"title": "xxx",
+		"slides": mocks.SLIDES_DATA,
+		"works":  mocks.WORKS_DATA,
+		"people": mocks.PEOPLE_DATA,
 	})
 }

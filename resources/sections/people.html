@@ -1,0 +1,18 @@
+{{ define "people" }}
+<section class="people wow fadeIn center">
+    <div class="container">
+        <h3 class="title people-grid-title">PEOPLE</h3>
+    </div>
+    <div class="people-list">
+        {{ range .people }}
+        <div class="people-list__item">
+            <img src="{{ .Avatar }}" width="100%" />
+            <h4 class="fullname">{{ .Name }}</h4>
+            <h5 class="short-name">{{ .ShortName }}</h5>
+            <p class="position-job">{{ .PositionJob }}</p>
+        </div>
+        {{ end }}
+    </div>
+</section>
+
+{{ end }}
